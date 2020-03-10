@@ -1,5 +1,5 @@
 class Task:
-    
+
     def __init__(self,id,name,category="",priority=1):
         self.id = id
         self.name = name
@@ -9,23 +9,23 @@ class Task:
         self.active_days = 0
         print("Beggining Class")
 
-    def get_name():
+    def get_name(self):
         return self.name
 
-    def get_category():
+    def get_category(self):
         return self.category
 
-    def get_priority():
+    def get_priority(self):
         return self.priority
 
-    def set_name(name):
+    def set_name(self,name):
         self.name = name
 
-    def set_category(category):
+    def set_category(self,category):
         self.category = category
 
-    def set_priority(priority):
+    def set_priority(self,priority):
         self.priority = priority
 
     def __str__(self):
-        return str(self.id) + " | " + self.name + " | " + self.category + " | " + str(self.priority) + " | "  
+        return str(self.id) + " | " + self.name + " | " + self.category + " | " + str(self.priority) + " | "

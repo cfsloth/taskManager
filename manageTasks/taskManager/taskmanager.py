@@ -13,14 +13,14 @@ class TaskManager(object):
         if len(self.taskArray) == 0 or self.taskArray[0].get_priority() <= task.get_priority():
             self.taskArray.insert(0,task)
         else:
-            index = binarySearchIndex(task.get_priority,self.taskArray,get_priority())
+            index = self.__binarySearchIndex(task.get_priority,self.taskArray,'get_priority')
             self.taskArray.insert(index,task)
 
     def __binarySearchIndex(self,value,array,acessMethod):
-        middle = (len(self.taskArray) / 2) if ((len(self.taskArray) / 2) % 0) else (len(self.taskArray) / 2) + 1
-        if value == array[middle].acessMethod:
+        middle = (len(self.taskArray) / 2) if ((len(self.taskArray) % 2) == 0) else (len(self.taskArray) % 2) + 1
+        if value == array[middle].acessMethod():
             return middle
-        elif value < array[middle].acessMethod:
+        elif value < array[middle].acessMethod():
             binarySearchIndex(value,array[:middle])
         else:
             binarySearchIndex(value,array[middle:])
