@@ -17,13 +17,15 @@ class TaskManager(object):
             self.taskArray.insert(index,task)
 
     def __binarySearchIndex(self,value,array,acessMethod):
-        middle = (len(self.taskArray) / 2) if ((len(self.taskArray) % 2) == 0) else (len(self.taskArray) % 2) + 1
-        if value == array[middle].acessMethod():
+        middle = 0
+        if len(self.taskArray) > 0:
+            middle = (len(self.taskArray) / 2)
+        if value == array[int(middle)].acessMethod():
             return middle
-        elif value < array[middle].acessMethod():
-            binarySearchIndex(value,array[:middle])
+        elif value < array[int(middle)].acessMethod():
+            self.__binarySearchIndex(value,array[:middle])
         else:
-            binarySearchIndex(value,array[middle:])
+            self.__binarySearchIndex(value,array[middle:])
 
     def __str__(self):
         taskString = ""
