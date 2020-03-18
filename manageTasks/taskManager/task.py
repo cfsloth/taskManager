@@ -9,20 +9,8 @@ class Task:
         self.active_days = 0
         print("Beggining Class")
 
-    def get_name(self):
-        return self.name
-
-    def get_category(self):
-        return self.category
-
     def get_priority(self):
         return self.priority
-
-    def set_name(self,name):
-        self.name = name
-
-    def set_category(self,category):
-        self.category = category
 
     def set_priority(self,priority):
         self.priority = priority
