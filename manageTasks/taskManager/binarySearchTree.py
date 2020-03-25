@@ -25,22 +25,18 @@ class BinarySearchTree:
             selectionInsert(node,tree)
 
         def selectionInsert(node,tree):
-            if len(tree.taskArray[0]) > 0 and tree.taskArray[0].priority > node.priority:
+            if tree != None and len(tree.taskArray) > 0 and tree.taskArray[0].priority > node.priority:
                 print("Add node right when there are no nodes")
                 return transverseTree(node,tree.leftNode)
-            elif len(tree.taskArray[0]) > 0 and tree.priority < node.priority :
+            elif tree != None and tree.priority < node.priority :
                 print("Add Node left when there are no nodes")
                 return transverseTree(node,tree.rightNode)
-            elif len(tree.taskArray[0]) == 0 and tree.priority == node.priority:
+            elif len(tree.taskArray[0 :
+                tree.append(node)
+
+            else tree.priority == node.priority:
                 tree.taskArray.append(node)
-                print("Add node when you find the right priority")
 
     def printTree(self):
-        tree = self.firstNode
-        transverseTree(tree)
-
-        def transverseTree(tree):
-            transverseTree(tree.leftNode)
-            if len(tree.task) > 1:
-                print(tree.task)
-            transverseTree(tree.rightNode)
+        tree = self.tree
+        if tree != None
