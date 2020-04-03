@@ -1,42 +1,39 @@
 class BinarySearchTree:
 
-    class Node:
-
-        def __init__(self,task,leftNode,rightNode):
-            self.taskArray = []
-            self.leftNode = None
-            self.rightNode = None
-
-        def __str__(self):
-            taskArray = []
-            for task in self.taskArray :
-                taskArray = taskArray + "\n" + str(task)
-            return taskArray
-
     def __init__(self):
-        self.firstNode = None
+        self.binarySearchTree = None
         print("Initing Binary Search Tree")
 
-    def addNode(self,node):
-        tree = self.firstNode
-        if tree == None:
-            tree = node
-        else:
-            selectionInsert(node,tree)
+    def addTask(self,task):
+        def innerAddTask(treeNode,task):
+            if self.binarySearchTree != None:
+                if task.priority < self.treeNode.taskArray[0].priority:
+                    return self.addTask(treeNode.leftNode,task)
+                elif task.priority > self.treeNode.taskArray[0].priority:
+                    return self.addTask(treeNode.rightNode,task)
+                else:
+                    treeNode.addToArray(task)
+            else:
+                self.treeNode = self.Node().addToArray(task)
+                print("Task added with success")
 
-        def selectionInsert(node,tree):
-            if tree != None and len(tree.taskArray) > 0 and tree.taskArray[0].priority > node.priority:
-                print("Add node right when there are no nodes")
-                return transverseTree(node,tree.leftNode)
-            elif tree != None and tree.priority < node.priority :
-                print("Add Node left when there are no nodes")
-                return transverseTree(node,tree.rightNode)
-            elif len(tree.taskArray[0 :
-                tree.append(node)
-
-            else tree.priority == node.priority:
-                tree.taskArray.append(node)
+        innerAddTask(self.binarySearchTree,task)
 
     def printTree(self):
-        tree = self.tree
-        if tree != None
+        def innerPrint(node):
+            print(node)
+            return innerPrint(node.rightNode) + innerPrint(node.leftNode)
+        innerPrint(self.binarySearchTree)
+
+    class Node(object):
+
+        def __init__(self):
+            self.rightNode = None
+            self.leftNode = None
+            self.taskArray = []
+
+        def addToArray(self,task):
+            self.taskArray.append(task)
+
+        def __str__(self):
+            printf(Node.taskArray)
