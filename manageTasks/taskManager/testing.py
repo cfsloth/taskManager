@@ -12,14 +12,15 @@ t8 = Task(8,"TODO: Check algorithms updates",priority=10)
 
 task_manager = TaskManager()
 task_manager.addTask(t)
-task_manager.addTask(t2)
-task_manager.addTask(t3)
-task_manager.addTask(t4)
-task_manager.addTask(t5)
-task_manager.addTask(t6)
-task_manager.addTask(t7)
-task_manager.addTask(t8)
-print(task_manager)
+print(task_manager.binarySearchTree.binaryTree)
+#task_manager.addTask(t2)
+#task_manager.addTask(t3)
+#task_manager.addTask(t4)
+#task_manager.addTask(t5)
+#task_manager.addTask(t6)
+#task_manager.addTask(t7)
+#task_manager.addTask(t8)
+#print(task_manager)
 
 
 """Removing task"""

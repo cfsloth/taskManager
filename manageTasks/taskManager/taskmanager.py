@@ -6,7 +6,6 @@ class TaskManager(object):
     def __init__(self):
         self.binarySearchTree = BinarySearchTree()
         print("Initing TaskManager")
-        print("Initializing the BinaryBalanceTree")
 
     """Adding task ordered by priority"""
     """Maibe adding a check for autheticity of the object """
