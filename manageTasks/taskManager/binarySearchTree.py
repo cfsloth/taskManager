@@ -1,40 +1,36 @@
+from node import Node
+
 class BinarySearchTree:
-
-    class Node:
-
-        def __init__(self):
-            self.rightNode = None
-            self.leftNode = None
-            self.taskArray = []
-
-        def addToArray(self,task):
-            self.taskArray.append(task)
-
-        def __str__(self):
-            print("Array:", Node.taskArray ,"\n")
 
     def __init__(self):
         self.binaryTree = None
         print("Initing Binary Search Tree")
 
     def addTask(self,task):
+
         def innerAddTask(treeNode,task):
-            if self.binaryTree != None:
-                if task.priority < self.treeNode.taskArray[0].priority:
-                    print("goes left")
-                    return self.addTask(treeNode.leftNode,task)
-                elif task.priority > self.treeNode.taskArray[0].priority:
-                    print("goes right")
-                    return self.addTask(treeNode.rightNode,task)
+            if treeNode != None:
+                if task.priority < treeNode.taskArray[0].priority:
+                    if treeNode.leftNode != None:
+                        return innerAddTask(treeNode.leftNode,task)
+                    else:
+                        treeNode.leftNode = Node().addToArray(task)
+                        return 1
+                elif task.priority > treeNode.taskArray[0].priority:
+                    if treeNode.rightNode != None:
+                        return innerAddTask(treeNode.rightNode,task)
+                    else:
+                        treeNode.rightNode = Node().addToArray(task)
+                        return 1
                 else:
+                    #This case is when there are equals
                     treeNode.addToArray(task)
-                    print("Task added with sucess")
                     return 1
             else:
                 print("First task added with success")
-                deb = self.Node().addToArray(task)
-                treeNode = self.Node().addToArray(task)
-                print(treeNode.taskArray)
+                new_node = Node()
+                new_node.addToArray(task)
+                self.binaryTree = new_node
                 return 1
 
         innerAddTask(self.binaryTree,task)
@@ -44,4 +40,4 @@ class BinarySearchTree:
             if node != None:
                 print(node)
                 return innerPrint(node.rightNode) + innerPrint(node.leftNode)
-        innerPrint(self.binarySearchTree)
+        innerPrint(self.binaryTree)
